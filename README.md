@@ -1,3 +1,3 @@
 # Hutopia
 
-hutopia
+Checkout the [documentation](hutopianet.github.io/hutopia)!
