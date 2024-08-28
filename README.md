@@ -1,3 +1,3 @@
 # Hutopia
 
-Checkout the [documentation](hutopianet.github.io/hutopia)!
+Checkout the [documentation](https://hutopianet.github.io/hutopia)!
