@@ -1,0 +1,2 @@
+[plugin]
+db-connection-env = "DB_CONNECTION_URL"

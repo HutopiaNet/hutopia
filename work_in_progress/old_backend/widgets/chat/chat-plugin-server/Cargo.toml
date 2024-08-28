@@ -1,0 +1,24 @@
+[package]
+name = "chat-plugin-server"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+hutopia-plugin-server = { path = "../../../hutopia-plugin-server" }
+hutopia-utils = { path = "../../../hutopia-utils" }
+chat-plugin-protocol = { path = "../chat-plugin-protocol" }
+chat-plugin-database = { path = "../chat-plugin-database" }
+log = "0.4.20"
+rust-embed = "8.2.0"
+actix = "0.13.1"
+actix-web = "4.4.1"
+actix-web-actors = "4.2.0"
+actix-rt = "2.9.0"
+serde = "1.0.195"
+reqwest = { version = "0.11.24", features = ["json", "blocking"] }
+serde_json = "1.0.114"
+lazy_static = "1.4.0"
+mime_guess = "2.0.4"
