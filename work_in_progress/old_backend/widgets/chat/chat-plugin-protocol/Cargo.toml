@@ -1,0 +1,10 @@
+[package]
+name = "chat-plugin-protocol"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+uuid = { version = "1.6" }
+protocol = { version = "3.4.0" }
+protocol-derive = "3.4.0"
+hutopia-utils = { path = "../../../hutopia-utils" }
