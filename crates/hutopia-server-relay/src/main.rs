@@ -60,13 +60,15 @@ async fn main() -> std::io::Result<()> {
             .service(logout)
             .service(gen_space_auth_token)
             .service(check_space_auth_token)
-            .service(static_files)
+            //.service(static_files)
             .app_data(web::Data::new(server_data.clone()))
     })
     .bind(&bind_address)?
     .run()
     .await
 }
+
+/* Not needed anymore with tauri
 
 use mime_guess::from_path;
 use rust_embed::RustEmbed;
@@ -94,3 +96,4 @@ pub(crate) fn handle_static_file(path: &str) -> HttpResponse {
         None => HttpResponse::NotFound().body("404 Not Found"),
     }
 }
+*/

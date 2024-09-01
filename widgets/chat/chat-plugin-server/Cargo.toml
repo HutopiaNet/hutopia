@@ -7,8 +7,8 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-hutopia-plugin-server = { path = "../../../hutopia-plugin-server" }
-hutopia-utils = { path = "../../../hutopia-utils" }
+hutopia-plugin-server = { path = "../../../crates/hutopia-plugin-server" }
+hutopia-utils = { path = "../../../crates/hutopia-utils" }
 chat-plugin-protocol = { path = "../chat-plugin-protocol" }
 chat-plugin-database = { path = "../chat-plugin-database" }
 log = "0.4.20"

@@ -1,31 +1,13 @@
 #!/bin/bash
 
 # =============
-cargo_command="cargo b -j 1 -r" # --release
-plugin_folder="../../hutopia-server-space/plugins"
-server_crate="chat-plugin-server"
-client_crate="chat-plugin-client"
+cargo_command="cargo b -j 1" # --release
+plugin_folder="../../crates/hutopia-server-space/plugins"
+server_crate="console-plugin-server"
 # =============
 
 trap 'echo "Error: Command failed"; exit 1' ERR
 
-# build the pkg using wasm-pack
-cd $client_crate
-wasm-pack build --target web
-
-cd website
-npm install # --dry-run --quiet || npm install # run install only if necessary
-npm run build
-
-# mv dist
-
-if [ -d "../../dist" ]; then
-    rm -rf ../../dist
-fi
-mv ./dist ../../
-
-cd ..
-cd ..
 cd $server_crate
 
 # compile server plugin

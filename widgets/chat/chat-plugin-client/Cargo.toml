@@ -8,7 +8,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 custom-elements = { git = "https://github.com/gbj/custom-elements/" }
-hutopia-plugin-client = { path = "../../../hutopia-plugin-client" }
+hutopia-plugin-client = { path = "../../../crates/hutopia-plugin-client" }
 chat-plugin-protocol = { path = "../chat-plugin-protocol" }
 wasm-bindgen = "0.2"
 uuid = { version = "1.6", features = ["v4", "js"] }
