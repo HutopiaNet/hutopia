@@ -1,0 +1,36 @@
+.cardAnimation {
+  visibility: hidden;
+
+  transform-origin: top;
+  animation: cardAppearAnimation ease-in 0.3s;
+  animation-delay: 3.1s;
+  animation-fill-mode: forwards;
+  /*
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  */
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    height: fit-content;
+  }
+}
+
+@keyframes cardAppearAnimation {
+  0% {
+    visibility: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  100% {
+    visibility: visible;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}

@@ -1,0 +1,94 @@
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+
+
+
+
+
+/*
+  Enter and leave animations can use different
+  durations and timing functions.
+*/
+.slide-fade-enter-active {
+  transition: all 0.2s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(8px);
+  opacity: 0;
+}
+
+
+
+
+
+
+
+
+/*
+  Enter and leave animations can use different
+  durations and timing functions.
+*/
+.hide-enter-active {
+  max-width: 50%;
+  transition: all .8s ease-out;
+  transition: p 800ms ease-out;
+}
+
+.hide-leave-active {
+  transition: all 1s ease-in;
+  transition: p 800ms ease-in;
+}
+
+.hide-enter-from,
+.hide-leave-to {
+  opacity: 0;
+  width: 0%;
+  max-width: 0%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.smooth-enter-active {
+  transition: all 0.1s ease-in;
+}
+
+.smooth-leave-active {
+  transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.smooth-enter-from,
+.smooth-leave-to {
+  width: 0%;
+  flex-grow: 0;
+}

@@ -1,0 +1,11 @@
+.tag {
+  width: fit-content;
+  margin: auto;
+
+  padding-left: 6px;
+  padding-right: 6px;
+
+  font-size: 12px;
+  text-align: center;
+  border-radius: 7px;
+}

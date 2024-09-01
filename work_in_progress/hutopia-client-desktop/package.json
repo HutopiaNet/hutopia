@@ -1,0 +1,38 @@
+{
+  "name": "hutopia-client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "vite:dev": "vite",
+    "vite:build": "vite build",
+    "vite:preview": "vite preview",
+    "tauri": "tauri",
+    "tauri:build": "tauri build",
+    "tauri:dev": "tauri dev",
+    "dev": "tauri dev",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.0.0-rc.3",
+    "@tauri-apps/plugin-shell": "^2.0.0-rc.0",
+    "@types/bun": "^1.1.8",
+    "pinia": "^2.2.2",
+    "vue": "^3.4.38",
+    "vue-cookies": "^1.8.4",
+    "vue-router": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.0.0-rc.7",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
+    "@vue/tsconfig": "^0.5.1",
+    "internal-ip": "^8.0.0",
+    "sass": "^1.77.8",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2",
+    "vue-tsc": "^2.0.29"
+  },
+  "packageManager": "bun@1.1.18"
+}
