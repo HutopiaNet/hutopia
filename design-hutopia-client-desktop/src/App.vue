@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import Window from '@components/Window.vue';
 import ViewPort from '@components/ViewPort.vue';
+import TestViewPort from '@components/test/TestViewPort.vue';
 import ProfileCard from './components/profile/ProfileCard.vue';
 </script>
 
 <template>
-  <ViewPort/>
+  <!--ViewPort/-->
   <!--ProfileCard/-->
   <!--div class="prova"></div-->
+
+  <TestViewPort/>
 </template>
 
 <style scoped lang="scss">
