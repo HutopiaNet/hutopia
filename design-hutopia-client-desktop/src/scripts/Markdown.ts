@@ -97,4 +97,4 @@ Conclusions
 export const blocks = extractBlocks(testString);
 export const html = renderBlocks(blocks);
 
-console.log(html);
+//console.log(html);

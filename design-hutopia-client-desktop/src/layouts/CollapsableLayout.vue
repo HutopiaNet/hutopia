@@ -17,7 +17,7 @@ const props = defineProps<{
   display: grid;
   grid-template-rows: 0fr;
 
-  transition: 3.2s grid-template-rows ease-in-out;
+  transition: 2.2s grid-template-rows ease-in-out;
 
   > div:not(.persistent) {
     overflow: hidden;

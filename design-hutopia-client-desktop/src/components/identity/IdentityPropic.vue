@@ -1,14 +1,22 @@
 <script setup lang="ts">
+// Importa l'immagine
+import { computed, ref } from 'vue';
+import catImage from '@/assets/images/template/wallpaper-games/cat.png';
+import Bun from 'bun';
+
 const props = defineProps({
+  propicUrl: String,
   statusIcon: Boolean
 })
+
+const obama = ref('' + 'src/assets/images/template/wallpaper-games/cat.png');
 </script>
 
 <template>
   <svg class="icon" width="100px" height="100px" viewBox="0 0 100 100">
     <defs>
       <pattern id="image" height="100%" width="100%">
-        <image width="100%" height="100%" xlink:href="@images/template/wallpaper-games/cat.png"/>
+        <image width="100%" height="100%" :xlink:href="obama"/>
       </pattern>
     </defs>
 
