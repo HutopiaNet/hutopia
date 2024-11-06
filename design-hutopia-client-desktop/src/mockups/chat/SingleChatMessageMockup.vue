@@ -7,21 +7,36 @@ import ScrollWrapper, { ScrollData } from '../ScrollWrapper.vue';
 import GalleryEditMockup from './GalleryEditMockup.vue';
 import MarkdownView from '@/components/markdown/MarkdownView.vue';
 import { Identifier } from 'typescript';
-import { Identity } from '@/scripts/Hutopia';
+import { Identity, Message } from '@/scripts/Hutopia';
 import ChatMessage from './ChatMessage.vue';
 import IdentityPropic from '@/components/identity/IdentityPropic.vue';
 
-interface Chat {
-  messages: Message[]
-}
+const badges = [
+  {
+    icon: 'shield-icon',
+    name: 'Administrator',
+    mainColor: 0,
+    detailsColor: 0 
+  },
+  {
+    icon: 'paint-icon',
+    name: 'Designer',
+    mainColor: 0,
+    detailsColor: 0 
+  },
+]
 
-interface Message {
-  name: string,
-  contents: string[],
-}
+const identity = ref<Identity>(
+  {
+    id: 2,
+    name: 'xGab0',
+    propicUrl: 'src/assets/images/template/wallpaper-games/warframe.jpg', // 'src/assets/images/template/wallpaper-games/warframe.jpg'
+    badges: [badges[0]]
+  }
+)
 
-const testChat: Chat = {
-  messages: [
+const messages = ref<Message[]>(
+  [
     {
       name: 'Alice Johnson',
       contents: [
@@ -40,185 +55,24 @@ const testChat: Chat = {
         'Godo 1000, viva Hutopia e la Gerarchia',
         //'Ma chi diavolo siete voi due e potete smetterla di parlare in inglese?!'
       ]
-    },
+    }
   ]
-}
-
-const scrollData = ref<ScrollData>({
-  scrollTop: 0,
-  scrollHeight: 0,
-  scrollPercentage: 0,
-  isAtStart: true,
-  isAtEnd: false,
-});
-
-// Funzione per salvare i dati di scroll
-const saveScrollData = (data: ScrollData) => {
-  scrollData.value = data;
-};
-
-const chat = ref<Chat>(testChat);
-const writingMessage = ref<string>('');
-const htmlContent = ref<string>(html);
-
-// Funzione per salvare i dati di scroll
-const addMessage = (name: string) => {
-  if (writingMessage.value.length == 0) return;
-
-  console.log('NOME: ' + name)
-
-  if (hasLastMessage(name)) {
-    chat.value.messages.at(-1).contents.push(writingMessage.value);
-
-    console.log("new_messages: latest present");
-    console.log("- content: " + writingMessage.value);
-  } else {
-    const newMessage: Message = {
-      name: 'Gabriele',
-      contents: [ writingMessage.value ]
-    };
-
-    console.log("new_messages: latest NOT present");
-    console.log("- content: " + newMessage.contents[0]);
-
-    chat.value.messages.push(newMessage); 
-  }
-};
-
-const hasLastMessage = (name: string) => {
-  const message: Message = chat.value.messages.at(-1);
-
-  console.log(message);
-
-  return message.name == name;
-};
+)
 
 onMounted(() => {
-  /*
-  const t0 = performance.now();
-  console.log("HTML:");
-  console.log(htmlContent.value);
-  const t1 = performance.now();
 
-  console.log(`Markdown rendering took ${t1 - t0} milliseconds.`);
-
-  const allora = hasLastMessage('Gabriele');
-  console.log('hasLastMessage: ' + allora);
-  */
 })
-
-//const node: VNode = h('div', { class: 'bar', innerHTML: 'hello' })
-const VirtualNode: VNode = h('markdown-container', [
-    //h('div', { class: 'bar', innerHTML: 'hello' }),
-    //h('div', { class: 'bar', innerHTML: 'hello' }),
-    h('div', { class: 'elenco', innerHTML: [
-        h('div', { class: 'barra', innerHTML: 'hello' }),
-        h('div', { class: 'contenuto', innerHTML: 'hello' }),
-    ]}),
-])
-
-function Render() {
-  return h('div', { class: 'markdown-container' }, [
-      h('div', { class: 'elenco' }, [
-          h('div', { class: 'barra' }, 'ciao'),
-          h('div', { class: 'contenuto' }, [
-              h('div', { class: 'bar' }, 'ciao'),
-              h('div', { class: 'bar' }, 'ciao'),
-          ])
-      ])
-  ]);
-
-  /*
-  return h('markdown-container', [
-    //h('div', { class: 'bar', innerHTML: 'hello' }),
-    //h('div', { class: 'bar', innerHTML: 'hello' }),
-    h('div', { class: 'elenco', innerHTML: [
-        h('div', { class: 'barra', innerHTML: 'hello' }),
-        h('div', { class: 'contenuto', innerHTML: 'hello' }),
-    ]}),
-  ])
-  */
-}
-
-function TSXRender() {
-  return (
-    <div class="markdown-container">
-      <div class="elenco">
-        <div class="barra"/>
-        <div class="contenuto">
-          <span>ciao</span>
-          <span>ciao</span>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-const badges = [
-  {
-    icon: 'shield-icon',
-    name: 'Administrator',
-    mainColor: 0,
-    detailsColor: 0 
-  },
-  {
-    icon: 'paint-icon',
-    name: 'Designer',
-    mainColor: 0,
-    detailsColor: 0 
-  },
-]
-
-const identities = [
-  {
-    id: 0,
-    name: 'Alice Johnson',
-    propicUrl: 'src/assets/images/template/wallpaper-games/cat.png', // 'src/assets/images/template/wallpaper-games/cat.png'
-    badges: [badges[0], badges[1]]
-  },
-  {
-    id: 1,
-    name: 'Walter White',
-    propicUrl: 'src/assets/images/template/wallpaper-games/minecraft.png', // 'src/assets/images/template/wallpaper-games/minecraft.png'
-    badges: [badges[0], badges[1]]
-  },
-  {
-    id: 2,
-    name: 'xGab0',
-    propicUrl: 'src/assets/images/template/wallpaper-games/warframe.jpg', // 'src/assets/images/template/wallpaper-games/warframe.jpg'
-    badges: [badges[0]]
-  },
-]
 </script>
 
 <template>
   <div class="mockup">
-    <!-- Mostra i dati dello scroll -->
-    <!--p>Scroll Top: {{ scrollData.scrollTop }}</p>
-    <p>Scroll Height: {{ scrollData.scrollHeight }}</p>
-    <p>Scroll Percentage: {{ scrollData.scrollPercentage }}%</p>
-    <p>All'inizio: {{ scrollData.isAtStart }}</p>
-    <p>Alla fine: {{ scrollData.isAtEnd }}</p-->
-
     <div class="chat-header">
       <span class="identity-name">Chat </span>
       <IdentityPropic :status-icon="true"/>
     </div>
 
-    <FadeEffect :top="!scrollData.isAtStart" :bottom="!scrollData.isAtEnd" style="height: 100%">
-      <ScrollWrapper @update-scroll-data="saveScrollData">
-        <div class="chat-mockup">
-          <ChatMessage v-for="(item, index) in chat.messages" :identity="identities[index]" :message="testChat.messages[index]" :editing="false"/>
-        </div>
-      </ScrollWrapper>
-    </FadeEffect>
-
-    <div class="input-area">
-      <textarea v-model="writingMessage" id="w3review" name="w3review" rows="4" cols="50"/>
-      <span class="text" @click="addMessage('Gabriele')">
-        Invia
-      </span>
-      <!--input type="text" id="lname" name="lname" placeholder="type something in chat..."/-->
+    <div class="chat-mockup">
+      <ChatMessage :identity :message="messages[0]" :editing="false"/>
     </div>
   </div>
 </template>

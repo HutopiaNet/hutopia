@@ -1,19 +1,25 @@
 <script setup lang="ts">
-import ChannelTree from './ChannelTree.vue';
+import { ChildData } from '@/scripts/HtmlParser';
+import { defineProps, PropType } from 'vue';
+import RenderNode from './RenderNode.vue';
 
+// Accetta il nodo come prop
+const props = defineProps<{
+  node: ChildData;
+}>();
 </script>
 
 <template>
-  <div class="channel-tree-mockup">
-    <ChannelTree/>
+  <div class="elements-tree">
+    <p>Node View</p>
+    <RenderNode v-if="node != null" :node />
   </div>
 </template>
 
 <style scoped lang="scss">
-.channel-tree-mockup {
+.elements-tree {
   height: 90%;
-
-  padding: 20px;
+  padding: 10px;
 
   border-radius: 7px;
   border-color: rgba(255, 255, 255, 0.048);
